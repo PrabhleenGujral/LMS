@@ -434,14 +434,15 @@ export default function HomePage() {
             ))}
           </div>
           <blockquote className="text-lg md:text-xl text-foreground leading-relaxed italic font-heading max-w-2xl mx-auto">
-            &ldquo;LearnSphere has truly transformed my daily routine. The yoga
-            and meditation courses are so well-structured that I feel the
-            difference within weeks. Highly recommend to anyone seeking a
-            balanced, healthy lifestyle.&rdquo;
+            &ldquo;LearnSphere helped me land my dream job in tech! The hands-on
+            courses and real-world projects made all the difference. I built a
+            portfolio, earned certifications, and felt confident in interviews.
+            Highly recommend for anyone serious about upskilling and career
+            growth.&rdquo;
           </blockquote>
           <div className="mt-6">
-            <p className="font-semibold text-foreground">Ananya Gupta</p>
-            <p className="text-sm text-muted">Yoga Enthusiast, Mumbai</p>
+            <p className="font-semibold text-foreground">Vishal Singh</p>
+            <p className="text-sm text-muted">Software Engineer, Bangalore</p>
           </div>
         </motion.div>
       </section>
@@ -476,8 +477,8 @@ export default function HomePage() {
               Ready to Begin Your Journey?
             </h2>
             <p className="text-primary-light/90 text-lg mt-4 max-w-xl mx-auto">
-              Join 500+ learners who are already transforming their lives
-              through mindful education and holistic wellness.
+              Join 500+ learners who are already advancing their careers and
+              building real-world skills with LearnSphere.
             </p>
             <Link
               href="/auth/register"

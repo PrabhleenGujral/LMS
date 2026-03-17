@@ -40,7 +40,8 @@ export default function InstructorCoursesPage() {
             <p className="text-muted mt-1">Manage and create your courses</p>
           </div>
           <Link
-            href="/instructor/courses/create"
+            // href="/instructor/courses/create"
+            href=""
             className="btn-primary flex items-center gap-2 text-sm"
           >
             <Plus className="w-4 h-4" />

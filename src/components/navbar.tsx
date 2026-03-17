@@ -38,16 +38,10 @@ export function Navbar() {
   }, [pathname]);
 
   //links
-  // const navLinks = [
-  //   { href: "/courses", label: "Courses" },
-  //   { href: "/dashboard", label: "Dashboard", auth: true },
-  //   { href: "/instructor/courses", label: "My Courses", instructor: true },
-  // ];
-
   const navLinks = [
     { href: "/courses", label: "Courses" },
     { href: "/dashboard", label: "Dashboard", auth: true },
-    { href: "/", label: "My Courses", instructor: true },
+    { href: "/instructor/courses", label: "My Courses", instructor: true },
   ];
 
   return (
@@ -171,7 +165,8 @@ export function Navbar() {
                           Dashboard
                         </Link>
                         <Link
-                          href="/dashboard/profile"
+                          // href="/dashboard/profile"
+                          href=""
                           className="flex items-center gap-2.5 px-3 py-2.5 text-sm text-muted hover:text-foreground hover:bg-background rounded-lg transition-colors"
                         >
                           <User className="w-4 h-4" />
