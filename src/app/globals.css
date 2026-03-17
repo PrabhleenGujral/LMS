@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* LearnSphere Upskilling-inspired palette */
+  --color-primary: #2563eb; /* blue for tech/learning */
+  --color-primary-dark: #1e40af;
+  --color-primary-light: #60a5fa;
+  --color-accent: #f59e42; /* orange for energy/upskill */
+  --color-accent-dark: #b45309;
+  --color-accent-light: #fde68a;
+  --color-background: #f3f4f6;
+  --color-surface: #ffffff;
+  --color-foreground: #111827;
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-danger: #ef4444;
+
+  --font-heading: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+  --shadow-card-hover: 0 4px 16px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-nav: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-dropdown: 0 10px 40px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-button: 0 2px 8px rgba(37,99,235,0.25);
+  --shadow-button-accent: 0 2px 8px rgba(245,158,66,0.3);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--color-foreground);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* ─── Scrollbar ──────────────────────────────────── */
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
+
+  /* ─── Selection ──────────────────────────────────── */
+
+  ::selection {
+    background: rgba(107,163,104,0.2);
+    color: var(--color-foreground);
+  }
+}
+
+@layer components {
+  /* ─── Buttons ─────────────────────────────────────── */
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-xl font-medium
+           transition-all duration-200 hover:bg-primary-dark active:scale-[0.97];
+    box-shadow: var(--shadow-button);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 4px 16px rgba(107,163,104,0.35);
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center bg-accent text-white px-6 py-3 rounded-xl font-medium
+           transition-all duration-200 hover:bg-accent-dark active:scale-[0.97];
+    box-shadow: var(--shadow-button-accent);
+  }
+  .btn-accent:hover {
+    box-shadow: 0 4px 16px rgba(244,162,97,0.4);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center border-2 border-primary text-primary px-6 py-3 rounded-xl font-medium
+           transition-all duration-200 hover:bg-primary hover:text-white active:scale-[0.97];
+  }
+
+  /* ─── Card ────────────────────────────────────────── */
+
+  .card {
+    @apply bg-surface rounded-2xl border border-border overflow-hidden transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+  .card:hover {
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(107, 163, 104, 0.15);
+  }
+
+  /* ─── Form ────────────────────────────────────────── */
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-border bg-surface text-foreground
+           placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-primary/30
+           focus:border-primary transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-foreground mb-1.5 tracking-wide;
+  }
+
+  /* ─── Prose ───────────────────────────────────────── */
+
+  .prose h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-foreground);
+  }
+  .prose p {
+    margin-bottom: 0.75rem;
+    line-height: 1.8;
+    color: var(--color-muted);
+  }
+  .prose ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+  }
+  .prose li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-muted);
+  }
+  .prose li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+}
